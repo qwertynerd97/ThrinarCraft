@@ -7,6 +7,9 @@
             "register_to_creative_menu": true
         },
         "components": {
+            "minecraft:geometry": "geometry.crop.cross",
+            "minecraft:breathability": "air",
+            "minecraft:entity_collision": false,
             "minecraft:destroy_time": 100.0,
             "minecraft:explosion_resistance": 100,
             "minecraft:friction": 0.6,
@@ -16,7 +19,33 @@
             },
             "minecraft:map_color": "#73E1FF",
             "minecraft:block_light_absorption": 0,
-            "minecraft:block_light_emission": 0.1
+            "minecraft:block_light_emission": 0.1,
+            "minecraft:on_interact": {
+                "event": "fill_placeholder",
+                "target": "self",
+                "condition": "query.is_item_name_any('slot.weapon.mainhand', 0, 'wool', 'minecraft:wool')"
+            }
+        },
+        "events": {
+            "fill_placeholder": {
+                "sequence": [
+                    { 
+                        "decrement_stack": {} 
+                    },
+                    {
+                        "play_effect": {
+                            "delta" : 0,
+                            "effect" : "particle_sparks",
+                            "target" : "self"
+                        } 
+                    },
+                    {
+                        "set_block": {
+                            "block_type": "wool"
+                        }
+                    }
+                ]
+            }
         }
     }
 }
