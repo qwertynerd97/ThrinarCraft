@@ -1,0 +1,14 @@
+{
+  "resource_pack_name": "My_BEHAVIOR_Pack",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "blueprint_top": {
+      "textures": "textures/blocks/blueprint_top"
+    },
+    "log_oak_top":{
+      "textures": "textures/blocks/log_oak_top"
+    }
+  }
+}

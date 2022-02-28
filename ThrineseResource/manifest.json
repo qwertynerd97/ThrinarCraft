@@ -1,0 +1,22 @@
+{
+	"format_version": 2,
+	"header": {
+		"description": "Explore the world of minecraft, as seen through the eyes of the last two survivors of Thrinar",
+		"name": "ThrineseCraftResources",
+		"uuid":"e80a4154-4663-4801-814c-0c2eae0d1fd8",
+		"version": [1, 0, 0],
+		"min_engine_version": [1, 16, 0]
+	},
+	"modules": [
+		{
+			"description": "Thrinese Textures",
+			"type": "resources",
+			"uuid": "6a2f1818-9e3c-495c-8442-2635280506c2",
+			"version": [1, 0, 0]
+		}
+	],
+	"metadata": {
+		"authors":["QwertyNerd97"],
+		"license":"GPL-3.0-or-later"
+	}
+}

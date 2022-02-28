@@ -1,0 +1,28 @@
+{
+	"format_version": 2,
+	"header": {
+		"description": "Explore the world of minecraft, as seen through the eyes of the last two survivors of Thrinar",
+		"name": "ThrineseCraftBehavior",
+		"uuid":"1349d4b2-0bfb-43d8-9eed-fbc58746836a",
+		"version": [1, 0, 0],
+		"min_engine_version": [1, 16, 0]
+	},
+	"modules": [
+		{
+			"description": "Thrinese Behaviors",
+			"type": "data",
+			"uuid": "0e7f0304-4468-44f4-9d45-776ddcfbfe4f",
+			"version": [1, 0, 0]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid":"e80a4154-4663-4801-814c-0c2eae0d1fd8",
+			"version":[1,0,0]
+		}
+	],
+	"metadata": {
+		"authors":["QwertyNerd97"],
+		"license":"GPL-3.0-or-later"
+	}
+}
