@@ -7,7 +7,19 @@
             "is_summonable": true
         },
         "components": {
-            "minecraft:physics": {}
+            "minecraft:physics": {},
+            "minecraft:type_family": {
+                "family": [ "inanimate" ]
+            },
+            "minecraft:collision_box": {
+                "width": 0.98,
+                "height": 0.7
+            },
+            "minecraft:inventory": {
+                "container_type": "container",
+                "inventory_size": 64,
+                "can_be_siphoned_from": false
+            }
         }
     }
 }
