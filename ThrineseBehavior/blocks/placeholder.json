@@ -40,6 +40,13 @@
                         } 
                     },
                     {
+                        "run_command": {
+                            "command" : "/give @p emerald",
+                            "command array": [], //not used
+                            "target" : "self"
+                        }
+                    },
+                    {
                         "set_block": {
                             "block_type": "wool"
                         }

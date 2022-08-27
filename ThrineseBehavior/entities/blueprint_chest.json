@@ -1,25 +1,53 @@
 {
-    "format_version": "1.12.0",
-    "minecraft:entity": {
-        "description": {
-            "identifier": "thrinar:blueprint_chest",
-            "is_spawnable": true,
-            "is_summonable": true
-        },
-        "components": {
-            "minecraft:physics": {},
-            "minecraft:type_family": {
-                "family": [ "inanimate" ]
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "thrinar:blueprint_chest",
+			"is_spawnable": true,
+			"is_summonable": true
+		},
+		"components": {
+			"minecraft:physics": {},
+			"minecraft:type_family": {
+				"family": [ "inanimate" ]
+			},
+			"minecraft:collision_box": {
+				"width": 0.98,
+				"height": 0.7
+			},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+			"minecraft:interact": {
+				"interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject" : "other", "value" :  "player"},
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "bucket:0"}
+                ]
+              },
+              "event": "build_lighthouse",
+              "target": "self"
             },
-            "minecraft:collision_box": {
-                "width": 0.98,
-                "height": 0.7
-            },
-            "minecraft:inventory": {
-                "container_type": "container",
-                "inventory_size": 64,
-                "can_be_siphoned_from": false
-            }
-        }
-    }
+            "use_item": true,
+            "play_sounds": "milk",
+            "interact_text": "action.interact.set_blueprint"
+          }
+				]
+			}
+		},
+		"events": {
+			"build_lighthouse": {
+				"run_command": {
+					"command": [
+						"structure load mystructure:lighthouse ~ ~ ~ 0_degrees none block_by_block 100",
+						"kill @s"
+					]
+				}
+			}
+		}
+	}
 }
