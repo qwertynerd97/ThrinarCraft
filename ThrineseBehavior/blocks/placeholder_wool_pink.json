@@ -2,7 +2,7 @@
     "format_version": "1.16.0",
     "minecraft:block": {
         "description": {
-            "identifier": "thrinar:placeholder_oak_planks",
+            "identifier": "thrinar:placeholder_wool_pink",
             "is_experimental": false,
             "register_to_creative_menu": true
         },
@@ -14,7 +14,7 @@
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "oak_planks_placeholder",
+                    "texture": "placeholder_wool_pink",
                     "render_method": "blend",
                     "ambient_occlusion": false,
                     "face_dimming": false
@@ -35,7 +35,7 @@
             "minecraft:on_interact": {
                 "event": "fill_placeholder",
                 "target": "self",
-                "condition": "query.is_item_name_any('slot.weapon.mainhand', 0, 'planks', 'minecraft:planks')"
+                "condition": "query.is_item_name_any('slot.weapon.mainhand', 0, 'wool', 'minecraft:wool')"
             }
         },
         "events": {
@@ -60,7 +60,7 @@
                     },
                     {
                         "set_block": {
-                            "block_type": "planks"
+                            "block_type": "wool"
                         }
                     }
                 ]

@@ -1,5 +1,7 @@
-tile.thrinar:placeholder.name=Wool Placeholder
-tile.thrinar:placeholder_oak_planks.name=Plank Placeholder
+tile.thrinar:placeholder_wool_pink.name=Wool Placeholder
+tile.thrinar:placeholder_planks_oak.name=Plank Placeholder
+
 entity.thrinar:blueprint_chest.name=Blueprint Chest
 item.spawn_egg.entity.thrinar:blueprint_chest.name=Spawn Blueprint Chest
+
 itemGroup.name.placeholder=Placeholders

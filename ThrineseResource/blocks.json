@@ -1,11 +1,11 @@
 {
 "format_version": "1.16.0",
-    "thrinar:placeholder": {
-        "textures": "wool_pink_placeholder",
+    "thrinar:placeholder_wool_pink": {
+        "textures": "placeholder_wool_pink",
         "sound":"wool"
     },
-    "thrinar:placeholder_oak_planks": {
-        "textures": "oak_planks_placeholder",
-        "sound":"wool"
+    "thrinar:placeholder_planks_oak": {
+        "textures": "placeholder_planks_oak",
+        "sound":"planks"
     }
 }

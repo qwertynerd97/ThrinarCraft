@@ -7,11 +7,11 @@
         "blueprint_top": {
             "textures": "textures/blocks/blueprint_top"
         },
-        "wool_pink_placeholder": {
-            "textures": "textures/blocks/wool_pink_placeholder_trans"
+        "placeholder_wool_pink": {
+            "textures": "textures/blocks/placeholder_wool_pink"
         },
-        "oak_planks_placeholder": {
-            "textures": "textures/blocks/oak_planks_placeholder"
+        "placeholder_planks_oak": {
+            "textures": "textures/blocks/placeholder_planks_oak"
         }
     }
 }
