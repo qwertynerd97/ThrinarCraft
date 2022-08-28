@@ -8,6 +8,18 @@
         },
         "components": {
             "minecraft:geometry": "geometry.crop.cross",
+            "minecraft:creative_category": {
+                "group": "creative.construction.placeholder",
+                "category": "construction"
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "wool_pink_placeholder",
+                    "render_method": "blend",
+                    "ambient_occlusion": false,
+                    "face_dimming": false
+                }
+            },
             "minecraft:breathability": "air",
             "minecraft:entity_collision": false,
             "minecraft:destroy_time": 100.0,

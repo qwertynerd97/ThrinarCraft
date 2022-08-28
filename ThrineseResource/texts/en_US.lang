@@ -1,3 +1,4 @@
 tile.thrinar:placeholder=Blueprint Block Placeholder
 entity.thrinar:blueprint_chest.name=Blueprint Chest
 item.spawn_egg.entity.thrinar:blueprint_chest.name=Spawn Blueprint Chest
+creative.construction.placeholder=Placeholders

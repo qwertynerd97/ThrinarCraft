@@ -6,6 +6,9 @@
     "texture_data": {
         "blueprint_top": {
             "textures": "textures/blocks/blueprint_top"
+        },
+        "wool_pink_placeholder": {
+            "textures": "textures/blocks/wool_pink_placeholder_trans"
         }
     }
 }

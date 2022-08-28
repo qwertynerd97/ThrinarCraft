@@ -1,7 +1,7 @@
 {
 "format_version": "1.16.0",
     "thrinar:placeholder": {
-        "textures": "blueprint_top",
+        "textures": "wool_pink_placeholder",
         "sound":"wool"
     }
 }

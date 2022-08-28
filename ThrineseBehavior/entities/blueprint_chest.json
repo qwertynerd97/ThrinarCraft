@@ -40,14 +40,14 @@
 			}
 		},
 		"events": {
-			"build_lighthouse": {
-				"run_command": {
-					"command": [
-						"structure load mystructure:lighthouse ~ ~ ~ 0_degrees none block_by_block 100",
-						"kill @s"
-					]
-				}
-			}
+      "build_lighthouse": {
+        "run_command": {
+          "command": [
+            "say Checking chest contents",
+            "structure load mystructure:lighthouse ~ ~ ~ 0_degrees none block_by_block 1"
+          ]
+        }
+      }
 		}
 	}
 }
