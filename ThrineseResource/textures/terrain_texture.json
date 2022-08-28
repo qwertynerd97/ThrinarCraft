@@ -9,6 +9,9 @@
         },
         "wool_pink_placeholder": {
             "textures": "textures/blocks/wool_pink_placeholder_trans"
+        },
+        "oak_planks_placeholder": {
+            "textures": "textures/blocks/oak_planks_placeholder"
         }
     }
 }
