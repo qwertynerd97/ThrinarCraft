@@ -1,0 +1,45 @@
+{
+	"type": "minecraftBedrock",
+	"name": "Thrinar",
+	"namespace": "thrinar",
+	"authors": [
+		"qwertynerd97"
+	],
+	"targetVersion": "1.19.20",
+	"description": "Experience Minecraft like never before. Research the plant and animals that call this world home, complete quests to unlock new villager experiences and grow closer to NPCs, use blueprints to build beautiful and functional structures, and wield powerful tools in your pursuit of knowledge.",
+	"experimentalGameplay": {
+		"holidayCreatorFeatures": true,
+		"creationOfCustomBiomes": false,
+		"upcomingCreatorFeatures": true,
+		"enableGameTestFramework": true,
+		"experimentalMolangFeatures": true,
+		"educationEdition": false
+	},
+	"bdsProject": true,
+	"packs": {
+		"behaviorPack": "./BP",
+		"resourcePack": "./RP"
+	},
+	"worlds": [
+		"./worlds/*"
+	],
+	"compiler": {
+		"plugins": [
+			"generatorScripts",
+			"typeScript",
+			"entityIdentifierAlias",
+			"customEntityComponents",
+			"customItemComponents",
+			"customBlockComponents",
+			"customCommands",
+			"moLang",
+			"formatVersionCorrection",
+			[
+				"simpleRewrite",
+				{
+					"packName": "Thrinar"
+				}
+			]
+		]
+	}
+}

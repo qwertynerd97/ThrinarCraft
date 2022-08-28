@@ -1,0 +1,35 @@
+{
+	"format_version": [
+		1,
+		1,
+		0
+	],
+	"thrinar:placeholder_planks": {
+		"sound": "stone",
+		"textures": "thrinar_placeholder_planks"
+	},
+	"thrinar:placeholder_wool": {
+		"sound": "stone",
+		"textures": "thrinar_placeholder_wool"
+	},
+	"thrinar:placeholder_brick": {
+		"sound": "stone",
+		"textures": "thrinar_placeholder_brick"
+	},
+	"thrinar:placeholder_wood_slab": {
+		"sound": "stone",
+		"textures": {
+			"down": "stone_slab_bottom",
+			"side": "stone_slab_side",
+			"up": "stone_slab_top"
+		}
+	},
+	"thrinar:double_placeholder_wood_slab": {
+		"sound": "stone",
+		"textures": {
+			"down": "stone_slab_bottom",
+			"side": "stone_slab_side",
+			"up": "stone_slab_top"
+		}
+	}
+}

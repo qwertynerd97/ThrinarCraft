@@ -1,0 +1,136 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "thrinar:placeholder_wood_slab",
+			"register_to_creative_menu": true,
+			"properties": {
+				"thrinar:top_slot_bit": [
+					false,
+					true
+				]
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_property('thrinar:top_slot_bit')",
+				"components": {
+					"minecraft:entity_collision": {
+						"origin": [
+							-8,
+							8,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					},
+					"minecraft:on_interact": {
+						"event": "on_combine_slabs",
+						"target": "self",
+						"condition": "query.block_face == 0.0 && query.get_equipped_item_name == 'placeholder_wood_slab'"
+					},
+					"minecraft:pick_collision": {
+						"origin": [
+							-8,
+							8,
+							-8
+						],
+						"size": [
+							16,
+							8,
+							16
+						]
+					}
+				}
+			}
+		],
+		"components": {
+			"minecraft:breathability": "air",
+			"minecraft:creative_category": {
+				"group": "itemGroup.name.placeholder",
+				"category": "construction"
+			},
+			"minecraft:flammable": {
+				"flame_odds": 0,
+				"burn_odds": 0
+			},
+			"minecraft:entity_collision": false,
+			"minecraft:destroy_time": 100.0,
+			"minecraft:explosion_resistance": 100,
+			"minecraft:friction": 0.6,
+			"minecraft:geometry": "geometry.slab",
+			"minecraft:map_color": "#73E1FF",
+			"minecraft:block_light_absorption": 0,
+			"minecraft:block_light_emission": 0.1,
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "thrinar_placeholder_planks",
+					"render_method": "blend",
+					"ambient_occlusion": false,
+					"face_dimming": false
+				},
+				"down": {
+					"texture": "thrinar_placeholder_planks",
+					"render_method": "blend",
+					"ambient_occlusion": false,
+					"face_dimming": false
+				},
+				"up": {
+					"texture": "thrinar_placeholder_planks",
+					"render_method": "blend",
+					"ambient_occlusion": false,
+					"face_dimming": false
+				}
+			},
+			"minecraft:on_interact": {
+				"event": "fill_placeholder",
+				"target": "self",
+				"condition": "query.is_item_name_any('slot.weapon.mainhand', 0, 'wooden_slab', 'minecraft:wooden_slab')"
+			},
+			"minecraft:on_player_placing": {
+				"event": "on_player_placing",
+				"target": "self"
+			},
+			"minecraft:part_visibility": {
+				"rules": {
+					"lower": "!query.block_property('thrinar:top_slot_bit')",
+					"upper": "query.block_property('thrinar:top_slot_bit')"
+				}
+			},
+			"minecraft:pick_collision": {
+				"size": [
+					16,
+					8,
+					16
+				]
+			},
+			"minecraft:rotation": [
+				0,
+				180,
+				0
+			]
+		},
+		"events": {
+			"on_player_placing": {
+				"set_block_property": {
+					"thrinar:top_slot_bit": "query.block_face == 0.0 || query.cardinal_facing == 1.0"
+				}
+			},
+			"fill_placeholder": {
+				"sequence": [
+					{
+						"decrement_stack": {}
+					},
+					{
+						"set_block": {
+							"block_type": "wooden_slab"
+						}
+					}
+				]
+			}
+		}
+	}
+}

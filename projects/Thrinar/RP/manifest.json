@@ -1,0 +1,52 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"qwertynerd97"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.3.2"
+			],
+			"dash": [
+				"0.9.28"
+			]
+		}
+	},
+	"header": {
+		"name": "Thrinar",
+		"description": "Experience Minecraft like never before. Research the plant and animals that call this world home, complete quests to unlock new villager experiences and grow closer to NPCs, use blueprints to build beautiful and functional structures, and wield powerful tools in your pursuit of knowledge.",
+		"min_engine_version": [
+			1,
+			19,
+			20
+		],
+		"uuid": "e1f284ae-90a9-4550-8a5d-805ed6bc75bc",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "db52d2de-eb90-42c0-b3a7-fe0ac8cd3166",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "7df57c47-59d5-4ac0-8f43-eed380a2c75b",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}
