@@ -1,0 +1,20 @@
+{
+	"num_mip_levels": 4,
+	"padding": 8,
+	"resource_pack_name": "Thrinar",
+	"texture_name": "atlas.terrain",
+	"texture_data": {
+		"thrinar_placeholder_planks": {
+			"textures": "textures/blocks/placeholder/placeholder_planks_oak"
+		},
+		"thrinar_placeholder_wool": {
+			"textures": "textures/blocks/placeholder/placeholder_wool_pink"
+		},
+		"thrinar_placeholder_brick": {
+			"textures": "textures/blocks/placeholder/placeholder_brick"
+		},
+		"thrinar_builder_home": {
+			"textures": "textures/blocks/builder_home"
+		}
+	}
+}

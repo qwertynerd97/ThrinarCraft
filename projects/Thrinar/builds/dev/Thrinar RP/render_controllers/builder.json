@@ -1,0 +1,26 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.builder": {
+			"arrays": {
+				"textures": {
+					"array.skins": [
+						"texture.default",
+						"texture.nectar",
+						"texture.angry",
+						"texture.angry_nectar"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.skins[query.is_powered+query.is_angry*2]"
+			]
+		}
+	}
+}

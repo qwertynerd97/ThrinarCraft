@@ -1,0 +1,39 @@
+{
+	"entity_sounds": {
+		"entities": {
+			"thrinar:builder": {
+				"volume": 0.6,
+				"pitch": 1,
+				"events": {
+					"hurt": {
+						"sound": "mob.builder.hurt",
+						"volume": 0.6,
+						"pitch": [
+							0.9,
+							1.1
+						]
+					},
+					"death": {
+						"sound": "mob.builder.death",
+						"volume": 0.6,
+						"pitch": [
+							0.9,
+							1.1
+						]
+					},
+					"attack": {
+						"sound": "mob.builder.sting",
+						"pitch": [
+							0.8,
+							1
+						]
+					},
+					"ambient.pollinate": {
+						"sound": "mob.builder.pollinate",
+						"volume": 0.85
+					}
+				}
+			}
+		}
+	}
+}

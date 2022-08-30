@@ -1,0 +1,328 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "thrinar:builder",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:bee"
+		},
+		"component_groups": {
+			"look_for_brick": {
+				"minecraft:behavior.move_to_block": {
+					"priority": 10,
+					"tick_interval": 1,
+					"start_chance": 0.5,
+					"search_range": 22,
+					"search_height": 22,
+					"goal_radius": 1,
+					"stay_duration": 5,
+					"target_selection_method": "random",
+					"target_offset": [
+						0,
+						0,
+						0
+					],
+					"target_blocks": [
+						"thrinar:placeholder_brick"
+					]
+				},
+				"minecraft:behavior.eat_block": {
+					"priority": 1,
+					"success_chance": 1,
+					"time_until_eat": 3,
+					"eat_and_replace_block_pairs": [
+						{
+							"eat_block": "thrinar:placeholder_brick",
+							"replace_block": "brick_block"
+						}
+					],
+					"on_eat": {
+						"event": "check_inventory",
+						"target": "self"
+					}
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 180,
+					"time_down_event": {
+						"event": "find_placeholder_timeout"
+					}
+				}
+			},
+			"look_for_planks": {
+				"minecraft:behavior.move_to_block": {
+					"priority": 10,
+					"tick_interval": 1,
+					"start_chance": 0.5,
+					"search_range": 22,
+					"search_height": 22,
+					"goal_radius": 1,
+					"stay_duration": 5,
+					"target_selection_method": "random",
+					"target_offset": [
+						0,
+						0,
+						0
+					],
+					"target_blocks": [
+						"thrinar:placeholder_planks"
+					]
+				},
+				"minecraft:behavior.eat_block": {
+					"priority": 1,
+					"success_chance": 1,
+					"time_until_eat": 3,
+					"eat_and_replace_block_pairs": [
+						{
+							"eat_block": "thrinar:placeholder_planks",
+							"replace_block": "planks"
+						}
+					],
+					"on_eat": {
+						"event": "check_inventory",
+						"target": "self"
+					}
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 180,
+					"time_down_event": {
+						"event": "find_placeholder_timeout"
+					}
+				}
+			},
+			"look_for_wool": {
+				"minecraft:behavior.move_to_block": {
+					"priority": 10,
+					"tick_interval": 1,
+					"start_chance": 0.5,
+					"search_range": 22,
+					"search_height": 22,
+					"goal_radius": 1,
+					"stay_duration": 5,
+					"target_selection_method": "random",
+					"target_offset": [
+						0,
+						0,
+						0
+					],
+					"target_blocks": [
+						"thrinar:placeholder_wool"
+					]
+				},
+				"minecraft:behavior.eat_block": {
+					"priority": 1,
+					"success_chance": 1,
+					"time_until_eat": 3,
+					"eat_and_replace_block_pairs": [
+						{
+							"eat_block": "thrinar:placeholder_wool",
+							"replace_block": "wool"
+						}
+					],
+					"on_eat": {
+						"event": "check_inventory",
+						"target": "self"
+					}
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 180,
+					"time_down_event": {
+						"event": "find_placeholder_timeout"
+					}
+				}
+			},
+			"find_resources": {
+				"minecraft:item_hopper": {},
+				"minecraft:behavior.move_to_block": {
+					"priority": 10,
+					"tick_interval": 1,
+					"start_chance": 0.5,
+					"search_range": 32,
+					"search_height": 32,
+					"goal_radius": 0.1,
+					"stay_duration": 5,
+					"target_selection_method": "random",
+					"target_offset": [
+						0,
+						-0.6,
+						0
+					],
+					"target_blocks": [
+						"chest"
+					],
+					"on_stay_completed": [
+						{
+							"event": "check_inventory",
+							"target": "self"
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": true,
+					"time": 180,
+					"time_down_event": {
+						"event": "check_inventory"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"builder",
+					"mob",
+					"arthropod"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.55,
+				"height": 0.5
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "fall",
+					"deals_damage": false
+				}
+			},
+			"minecraft:movement": {
+				"value": 0.3
+			},
+			"minecraft:flying_speed": {
+				"value": 0.15
+			},
+			"minecraft:navigation.hover": {
+				"can_path_over_water": true,
+				"can_sink": false,
+				"can_path_from_air": true,
+				"avoid_water": true,
+				"avoid_damage_blocks": true,
+				"avoid_sun": false
+			},
+			"minecraft:movement.hover": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_fly": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:inventory": {
+				"inventory_size": 1,
+				"can_be_siphoned_from": false,
+				"container_type": "hopper"
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"find_resources"
+					]
+				}
+			},
+			"check_inventory": {
+				"sequence": [
+					{
+						"run_command": {
+							"command": [
+								"function transfer_inventory"
+							]
+						}
+					},
+					{
+						"trigger": "set_search_type"
+					}
+				]
+			},
+			"set_search_type": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_equipment",
+							"value": "brick_block"
+						},
+						"remove": {
+							"component_groups": [
+								"find_resources"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"look_for_brick"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"value": "planks"
+						},
+						"remove": {
+							"component_groups": [
+								"find_resources"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"look_for_planks"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"value": "wool"
+						},
+						"remove": {
+							"component_groups": [
+								"find_resources"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"look_for_wool"
+							]
+						}
+					},
+					{
+						"filters": {
+							"none_of": [
+								{
+									"test": "has_equipment",
+									"value": "brick_block"
+								},
+								{
+									"test": "has_equipment",
+									"value": "planks"
+								},
+								{
+									"test": "has_equipment",
+									"value": "wool"
+								}
+							]
+						},
+						"trigger": "find_placeholder_timeout"
+					}
+				]
+			},
+			"find_placeholder_timeout": {
+				"remove": {
+					"component_groups": [
+						"look_for_brick",
+						"look_for_wool",
+						"look_for_planks"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"find_resources"
+					]
+				}
+			}
+		}
+	}
+}

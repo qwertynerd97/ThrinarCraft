@@ -1,0 +1,45 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "thrinar:builder",
+			"materials": {
+				"default": "bee"
+			},
+			"textures": {
+				"default": "textures/entity/builder/builder",
+				"nectar": "textures/entity/builder/builder_nectar"
+			},
+			"geometry": {
+				"default": "geometry.builder"
+			},
+			"animations": {
+				"flying": "animation.builder.flying",
+				"drip": "controller.animation.builder.drip",
+				"controller_builder_sting": "controller.animation.builder.sting",
+				"builder_sting": "animation.builder.sting",
+				"builder_no_stinger": "animation.builder.no_stinger",
+				"builder_fly_bobbing": "animation.builder.fly.bobbing",
+				"builder_root_controller": "controller.animation.builder.root"
+			},
+			"particle_effects": {
+				"nectar_dripping": "minecraft:nectar_drip_particle"
+			},
+			"scripts": {
+				"animate": [
+					"builder_root_controller",
+					{
+						"builder_no_stinger": "query.mark_variant==1"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.builder"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#ABCDEF"
+			}
+		}
+	}
+}

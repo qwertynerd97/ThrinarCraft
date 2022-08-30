@@ -1,0 +1,52 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.builder.drip": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"dripping": "query.is_powered"
+						}
+					]
+				},
+				"dripping": {
+					"particle_effects": [
+						{
+							"effect": "nectar_dripping"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_powered"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.builder.sting": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"builder_sting"
+					]
+				}
+			}
+		},
+		"controller.animation.builder.root": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"flying",
+						"drip",
+						"builder_fly_bobbing",
+						"controller_builder_sting"
+					]
+				}
+			}
+		}
+	}
+}
