@@ -6,7 +6,6 @@ entity.thrinar:blueprint_chest.name=Blueprint Chest
 tile.thrinar:placeholder_brick.name=Brick Placeholder
 action.interact.set_blueprint=Set Blueprint
 tile.thrinar:placeholder_wood_slab.name=Wood Slab Placeholder
-tile.thrinar:double_placeholder_wood_slab.name=Double Wood Slab Placeholder
 
 item.spawn_egg.entity.thrinar:builder.name=Spawn Builder
 entity.thrinar:builder.name=Builder

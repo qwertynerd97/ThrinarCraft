@@ -10,6 +10,7 @@
 			"minecraft:physics": {},
 			"minecraft:type_family": {
 				"family": [
+					"blueprint_chest",
 					"inanimate"
 				]
 			},
